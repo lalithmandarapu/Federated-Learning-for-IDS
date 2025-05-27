@@ -17,8 +17,6 @@ def get_current_page_name():
 def make_sidebar():
     with st.sidebar:
         st.title("Dashboard")
-        #st.write("")
-        #st.write("")
 
         if st.session_state.get("logged_in", False):
             st.page_link("pages/page1.py", label="Model Selection", icon="🔒")
@@ -37,8 +35,6 @@ def make_sidebar():
                 logout()
 
         elif get_current_page_name() != "streamlit_app":
-            # If anyone tries to access a secret page without being logged in,
-            # redirect them to the login page
             st.switch_page("streamlit_app.py")
 
 
