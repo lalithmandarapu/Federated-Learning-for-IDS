@@ -6,12 +6,10 @@ make_sidebar()
 
 st.markdown("# Logs and Reports")
 
-# Define the slow_text function
 def slow_text(text, delay=1):
     st.text(text)
     sleep(delay)
 
-# Display setup messages
 slow_text(" ")
 slow_text("Available execution logs are of:\n")
 slow_text("Please click one to view!")
@@ -19,13 +17,11 @@ slow_text("Please click one to view!")
 def display_message(message):
     st.write(message)
 
-# Creating buttons
 button1 = st.button("SERVER LOG")
 button2 = st.button("CLIENT 1 LOG")
 button3 = st.button("CLIENT 2 LOG")
 button4 = st.button("CLIENT 3 LOG")
 
-# Checking if buttons are clicked
 if button1:
     display_message(""" Starting Flower server, config: num_rounds=5, no round_timeout
         Flower ECE: gRPC server running (5 rounds), SSL is disabled
