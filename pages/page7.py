@@ -6,7 +6,6 @@ make_sidebar()
 
 st.markdown("# Intrusion Detection")
 def predict_attack(numeric_features, http_service_used, successfully_logged_in):
-    # Define threshold values for numeric features
     threshold_values = {
         'connections_to_same_dest_host': 10,
         'diff_services_percentage': 0.05,
@@ -16,7 +15,6 @@ def predict_attack(numeric_features, http_service_used, successfully_logged_in):
         's0_s1_s2_s3_percentage': 0.5
     }
 
-    # Check conditions based on threshold values and input features
     if (numeric_features['connections_to_same_dest_host'] > threshold_values['connections_to_same_dest_host'] and
             numeric_features['diff_services_percentage'] > threshold_values['diff_services_percentage']):
         return 'DoS Attack'
@@ -44,13 +42,10 @@ def main():
     http_service_used = st.radio("Was HTTP service used?", ('Yes', 'No'))
     successfully_logged_in = st.radio("Was login successful?", ('Yes', 'No'))
 
-    # Convert categorical features to numeric values
     http_service_used = 1 if http_service_used == 'Yes' else 0
     successfully_logged_in = 1 if successfully_logged_in == 'Yes' else 0
 
-    # Predict the type of attack when button is clicked
     if st.button("Predict"):
-        # Predict the type of attack
         numeric_features = {
             'connections_to_same_dest_host': connections_to_same_dest_host,
             'diff_services_percentage': diff_services_percentage,
