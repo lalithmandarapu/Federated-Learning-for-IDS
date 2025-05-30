@@ -6,10 +6,8 @@ make_sidebar()
 
 st.markdown("# Data Visualization")
 
-# Display the plot image
 st.image("plot.png")
 
-# Display the text
 st.markdown("""
 ### X-axis:
 Represents the rounds of training. Each round corresponds to a specific iteration or epoch during the training process.
