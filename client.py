@@ -2,6 +2,7 @@ import os
 import flwr as fl
 from loader import DataLoader, ModelLoader
 
+# Make tensorflow log less verbose
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 class Client(fl.client.NumPyClient):
@@ -13,7 +14,7 @@ class Client(fl.client.NumPyClient):
     def get_parameters(self, config):
         return self.model.get_weights()
 
-    def fit(self, parameters, _)
+    def fit(self, parameters, _):
         self.model.set_weights(parameters)
         history = self.model.fit(self.X_train, self.Y_train, epochs=1, batch_size=64)
         return self.model.get_weights(), len(self.X_train), {k: v[-1] for k, v in history.history.items()}
