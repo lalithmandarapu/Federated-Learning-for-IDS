@@ -2,9 +2,9 @@ import subprocess
 import os
 import time
 
-server_script_path = r"D:\Users\HP\Downloads\Test1\fl-ids-main (1)\fl-ids-main\server.py"
-client_script_path = r"D:\Users\HP\Downloads\Test1\fl-ids-main (1)\fl-ids-main\client.py"
-output_file_path = r"D:\Users\HP\Downloads\Test1\fl-ids-main (1)\fl-ids-main\output.txt"  # Full path to save the output of server.py
+server_script_path = r"    " #path to save the output of server_script
+client_script_path = r"    " #path to save the output of client_script
+output_file_path = r"      "  # Full path to save the output of server.py
 
 def run_script_in_terminal(script_path, output_file=None):
     if output_file:
